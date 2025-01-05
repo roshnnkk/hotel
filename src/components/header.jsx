@@ -10,9 +10,6 @@ const Header = () => {
         <MenuIcon />
       </div>
       <h1>ROYAL HOTEL</h1>
-      
-        
-      
     </div>
   );
 };
