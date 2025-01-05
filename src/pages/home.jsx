@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../assets/images/home-img.jpg";
+import background from "../assets/images/home2-img.jpg";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -12,7 +12,7 @@ const Home = () => {
     >
       <div>
         <section 
-          className="font-custom  text-white  flex flex-col sm:flex-row items-center justify-center sm:gap-20 sm:ml-10 lg:mt-80 xs:mt-[180px]
+          className="font-custom  text-white  flex flex-col sm:flex-row items-center justify-center sm:gap-20 sm:ml-10 lg:mt-80 xs:mt-[120px]
         gap-5 text-center  sm:text-left
         z-2"
         >
