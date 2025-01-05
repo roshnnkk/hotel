@@ -8,21 +8,19 @@ import {
   ROOMS_ROUTE,
   CONTACT_ROUTE,
 } from "./constant/routes.js";
-
+import Login from "./pages/login.jsx";
 
 function App() {
   return (
     <div>
-    
       <Home />
       <Header />
       <Routes>
         <Route path={HOME_ROUTE} element={<Home />} />
-        {/* <Route path={LOGIN_ROUTE} element={<Login />} />
-        <Route path={RESERVE_ROUTE} element={<Reserve />} />
+        <Route path={LOGIN_ROUTE} element={<Login />} />
+        {/* <Route path={RESERVE_ROUTE} element={<Reserve />} />
         <Route path={ROOMS_ROUTE} element={<Rooms />} />
         <Route path={CONTACT_ROUTE} element={<Contact />} /> */}
-
       </Routes>
     </div>
   );
