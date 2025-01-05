@@ -12,11 +12,11 @@ const Home = () => {
     >
       <div>
         <section
-          className="text-white  flex flex-col xm:flex-row items-center justify-center sm:gap-20 sm:ml-10 lg:mt-80 xs:mt-[180px]
+          className="text-white  flex flex-col sm:flex-row items-center justify-center sm:gap-20 sm:ml-10 lg:mt-80 xs:mt-[180px]
         gap-5 text-center sm:text-left
         z-2"
         >
-          <div className="flex gap-x-2 xm:flex-col xm:gap-y-3">
+          <div className="flex gap-x-2 sm:flex-col xm:gap-y-3">
             <InstagramIcon />
             <TwitterIcon />
             <FacebookIcon />
