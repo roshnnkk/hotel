@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="md:hidden text-white flex justify-between py-2 px-7">
+      <div className="md:hidden  text-white flex justify-between py-2 px-7">
         <h1>ROYAL HOTEL</h1>
         <div>
           <MenuIcon />
@@ -30,7 +30,13 @@ const Header = () => {
       </div>
       <div className="hidden md:block">
         <Box sx={{ flexGrow: 1, width: 1 }}>
-          <AppBar style={{ backgroundColor: "transparent", boxShadow: "none" }}>
+          <AppBar
+            style={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              fontFamily: "Montserrat, serif",
+            }}
+          >
             <Toolbar style={{ gap: "10px", justifyContent: "space-around" }}>
               <h1>Royal Hotel</h1>
               <div className="flex gap-6">
@@ -39,7 +45,7 @@ const Header = () => {
                     key={items.id}
                     to={items.to}
                     className={({ isActive }) =>
-                      isActive ? "text-amber-500" : "text-yellow-100"
+                      ` hover:text-amber-500 duration-200 ${isActive ? "text-amber-500" : "text-yellow-100"}`
                     }
                   >
                     {items.name}
