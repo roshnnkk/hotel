@@ -31,7 +31,7 @@ const Home = () => {
               searching for a combination <br />
               of charm, peace and, comfort
             </p>
-            <Buttons />
+            <Buttons width="160px" text="Choose Room"/>
           </div>
         </section>
       </div>
