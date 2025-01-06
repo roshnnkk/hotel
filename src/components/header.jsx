@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="md:hidden text-white flex justify-between py-2 px-7">
+      <div className="md:hidden bg-inherit text-white flex justify-between py-2 px-7">
         <h1>ROYAL HOTEL</h1>
         <div>
           <MenuIcon />
