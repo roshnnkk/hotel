@@ -1,0 +1,25 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "title": "Best View",
+      "name": "Family Suite",
+      "caption": "Room size : 30 ft, 1 king bed and 3 single bed",
+      "img": "familyRoom.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Special Price",
+      "name": "Presidential Room",
+      "caption": "Room size : 40 ft, 1 king bed and 1 single bed",
+      "img": "presidentialRoom.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Super Luxury",
+      "name": "Premier Room",
+      "caption": "Room size : 50 ft, 2 king bed and 2 single bed",
+      "img": "premierRoom.jpg"
+    }
+  ]
+}

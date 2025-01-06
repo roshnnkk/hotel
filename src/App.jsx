@@ -9,18 +9,20 @@ import {
   CONTACT_ROUTE,
 } from "./constant/routes.js";
 import Login from "./pages/login.jsx";
+import RoomSlider from "./pages/rooms.jsx";
 
 function App() {
   return (
     <div>
       <Home />
       <Header />
+
       <Routes>
         <Route path={HOME_ROUTE} element={<Home />} />
         <Route path={LOGIN_ROUTE} element={<Login />} />
-        {/* <Route path={RESERVE_ROUTE} element={<Reserve />} />
-        <Route path={ROOMS_ROUTE} element={<Rooms />} />
-        <Route path={CONTACT_ROUTE} element={<Contact />} /> */}
+        {/* <Route path={RESERVE_ROUTE} element={<Reserve />} /> */}
+        <Route path={ROOMS_ROUTE} element={<RoomSlider />} />
+        {/* <Route path={CONTACT_ROUTE} element={<Contact />} /> */}
       </Routes>
     </div>
   );
