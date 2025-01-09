@@ -6,11 +6,12 @@ import {
   LOGIN_ROUTE,
   RESERVE_ROUTE,
   ROOMS_ROUTE,
-  CONTACT_ROUTE,
+  GALLERY_ROUTE,
 } from "./constant/routes.js";
 import Login from "./pages/login.jsx";
 import RoomSlider from "./pages/rooms.jsx";
 import Reserve from "./pages/reserveform.jsx";
+import Gallery from "./pages/gallery.jsx";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path={LOGIN_ROUTE} element={<Login />} />
         <Route path={RESERVE_ROUTE} element={<Reserve />} />
         <Route path={ROOMS_ROUTE} element={<RoomSlider />} />
-        {/* <Route path={CONTACT_ROUTE} element={<Contact />} /> */}
+        <Route path={GALLERY_ROUTE} element={<Gallery />} />
       </Routes>
     </div>
   );

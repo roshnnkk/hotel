@@ -2,7 +2,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import { NavLink } from "react-router";
 import {
-  CONTACT_ROUTE,
+  GALLERY_ROUTE,
   HOME_ROUTE,
   LOGIN_ROUTE,
   RESERVE_ROUTE,
@@ -17,7 +17,7 @@ const Header = () => {
     { id: 2, name: "Login", to: LOGIN_ROUTE },
     { id: 3, name: "Booking", to: RESERVE_ROUTE },
     { id: 4, name: "Rooms", to: ROOMS_ROUTE },
-    { id: 5, name: "Contact", to: CONTACT_ROUTE },
+    { id: 5, name: "Gallery", to: GALLERY_ROUTE },
   ];
 
   return (
