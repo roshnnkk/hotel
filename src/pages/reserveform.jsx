@@ -11,6 +11,7 @@ import Input from "../components/input";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { saveUserData } from "../store/actions/dataAction";
 const Reserve = () => {
   const schema = yup.object().shape({
     name: yup
@@ -24,7 +25,8 @@ const Reserve = () => {
     phone: yup
       .number()
       .required("phone is required")
-      .typeError("phone is required"),
+      .typeError("phone is required")
+      .positive("phone number is not correctly formatted"),
   });
 
   const {
@@ -36,19 +38,23 @@ const Reserve = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (e) => {
-    console.log(e);
+  const dispatch = useDispatch();
 
+
+  const onSubmit = (data) => {
     const userData = {
       checkInDate,
       checkOutDate,
       adults,
       children,
       rooms,
-      name,
-      email,
-      phone,
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
     };
+    console.log("user data: " , userData);
+    dispatch(saveUserData(userData));
+
     localStorage.setItem("userData", JSON.stringify(userData));
     navigate("/reservationDetails");
   };

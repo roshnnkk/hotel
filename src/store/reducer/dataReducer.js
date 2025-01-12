@@ -1,7 +1,7 @@
 import { SAVE_USER_DATA } from "../actions/dataAction";
 
 const initialState = {
-  item: [],
+  items: [],
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const dataReducer = (state = initialState, action) => {
     case SAVE_USER_DATA:
       const updatedState = {
         ...state,
-        item: [...state, item, action.payload],
+        items: [...state.items, action.payload],
       };
 
       return updatedState;
