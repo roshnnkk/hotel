@@ -38,7 +38,7 @@ const RoomSlider = () => {
         className=" blur-sm bg-cover bg-center w-screen h-screen bg-scroll fixed justify-center -z-10"
         style={{ backgroundImage: `url(${currentBackground})` }}
       ></div>
-      <section className="pt-40 md:pt-60">
+      <section className="pt-16">
         <div className="w-[80%] xm:w-[50%] md:w-[80%] m-auto">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
@@ -50,7 +50,7 @@ const RoomSlider = () => {
           >
             {data.rooms.map((room) => (
               <SwiperSlide key={room.id}>
-                <div className="flex flex-col-reverse md:flex-row lg:flex-row items-center">
+                <div className="flex flex-col-reverse  min-h-screen md:flex-row lg:flex-row items-center">
                   <div
                     className="text-white flex flex-col gap-3"
                     style={{ flex: 1 }}

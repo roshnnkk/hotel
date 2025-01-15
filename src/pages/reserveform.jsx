@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FormControl, TextField, Button } from "@mui/material";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -40,7 +40,16 @@ const Reserve = () => {
 
   const dispatch = useDispatch();
 
-
+  useEffect(() => {
+    const savedUserData = JSON.parse(localStorage.getItem("userData"));
+    if (savedUserData) {
+      setCheckInDate(new Date(savedUserData.checkInDate));
+      setCheckOutDate(new Date(savedUserData.checkOutDate));
+      setAdults(savedUserData.adults);
+      setChildren(savedUserData.children);
+      setRooms(savedUserData.rooms);
+    }
+  }, []);
   const onSubmit = (data) => {
     const userData = {
       checkInDate,
@@ -52,7 +61,7 @@ const Reserve = () => {
       email: data.email,
       phone: data.phone,
     };
-    console.log("user data: " , userData);
+
     dispatch(saveUserData(userData));
 
     localStorage.setItem("userData", JSON.stringify(userData));
@@ -64,9 +73,7 @@ const Reserve = () => {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [rooms, setRooms] = useState(1);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+
   const navigate = useNavigate();
 
   const handleIncrement = (setter, value) => {
@@ -84,15 +91,12 @@ const Reserve = () => {
       id: 1,
       label: "Your Name",
       name: "name",
-      onChange: setName,
-
       type: "text",
     },
     {
       id: 2,
       label: "Your Email",
       name: "email",
-      onChange: setEmail,
 
       type: "text",
     },
@@ -100,7 +104,6 @@ const Reserve = () => {
       id: 3,
       label: "Your Phone",
       name: "phone",
-      onChange: setPhone,
 
       type: "number",
     },
@@ -239,7 +242,7 @@ const Reserve = () => {
               />
             ))}
 
-            <Buttons width={"100px"} text={"Submit"} type={"submit"} />
+            <Buttons width={"100px"} text={"Submit Form"} type={"submit"} />
           </FormControl>
         </form>
       </section>

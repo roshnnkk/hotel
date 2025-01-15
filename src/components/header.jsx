@@ -16,13 +16,13 @@ const Header = () => {
     { id: 1, name: "Home", to: HOME_ROUTE },
     { id: 2, name: "Login", to: LOGIN_ROUTE },
     { id: 3, name: "Booking", to: RESERVE_ROUTE },
-    { id: 4, name: "Rooms", to: ROOMS_ROUTE },
+    { id: 4, name: "Rooms", to : ROOMS_ROUTE },
     { id: 5, name: "Gallery", to: GALLERY_ROUTE },
   ];
 
   return (
     <>
-      <div className="md:hidden bg-amber-500/[0.6] text-white flex justify-between py-2 px-7">
+      <div className="md:hidden bg-gray-800 text-white flex justify-between py-2 px-7">
         <h1>ROYAL HOTEL</h1>
         <div>
           <MenuIcon />
@@ -45,7 +45,9 @@ const Header = () => {
                     key={items.id}
                     to={items.to}
                     className={({ isActive }) =>
-                      ` hover:text-amber-500 duration-200 ${isActive ? "text-amber-500" : "text-yellow-100"}`
+                      ` hover:text-amber-500 duration-200 ${
+                        isActive ? "text-amber-500" : "text-yellow-100"
+                      }`
                     }
                   >
                     {items.name}
