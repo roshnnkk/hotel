@@ -8,25 +8,42 @@ import {
   RESERVE_ROUTE,
   ROOMS_ROUTE,
 } from "../constant/routes";
-import { AppBar, Box, Toolbar } from "@mui/material";
+import { AppBar, Box, Toolbar, IconButton } from "@mui/material";
 import Buttons from "./buttons";
+import SwipeableTemporaryDrawer from "./drawer"; // Import the Drawer component
 
 const Header = () => {
   const headerItems = [
     { id: 1, name: "Home", to: HOME_ROUTE },
     { id: 2, name: "Login", to: LOGIN_ROUTE },
     { id: 3, name: "Booking", to: RESERVE_ROUTE },
-    { id: 4, name: "Rooms", to : ROOMS_ROUTE },
+    { id: 4, name: "Rooms", to: ROOMS_ROUTE },
     { id: 5, name: "Gallery", to: GALLERY_ROUTE },
   ];
 
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
   return (
     <>
-      <div className="md:hidden bg-gray-800 text-white flex justify-between py-2 px-7">
+      <div className="md:hidden bg-gray-800 items-center text-white flex justify-between py-2 px-7">
         <h1>ROYAL HOTEL</h1>
-        <div>
-          <MenuIcon />
-        </div>
+        <IconButton onClick={toggleDrawer(true)}>
+          <MenuIcon className="text-white" />
+        </IconButton>
+        <SwipeableTemporaryDrawer
+          open={drawerOpen}
+          toggleDrawer={toggleDrawer}
+        />
       </div>
       <div className="hidden md:block">
         <Box sx={{ flexGrow: 1, width: 1 }}>
