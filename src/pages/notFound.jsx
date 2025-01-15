@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import errorImg from "../assets/images/Error404.png";
 const NotFound = () => {
   return (
-    <div className="flex flex-col bg-amber-200 items-center justify-center min-h-screen bg-gray-200">
+    <div className="flex flex-col bg-amber-200 items-center justify-center min-h-screen ">
       <img src={errorImg} alt="404 Error" className="mb-4 w-1/2" />
       <p className="text-xs md:text-xl mb-4">
         The page you're looking for doesn't exist.
