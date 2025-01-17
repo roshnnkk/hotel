@@ -51,7 +51,14 @@ const Reserve = () => {
     }
   }, []);
   const onSubmit = (data) => {
-    const userData = {
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    if (!userData) {
+      userData = { reservations: [] };
+    } else if (!userData.reservations) {
+      userData.reservations = [];
+    }
+
+    const newReservation = {
       checkInDate,
       checkOutDate,
       adults,
@@ -62,9 +69,10 @@ const Reserve = () => {
       phone: data.phone,
     };
 
-    dispatch(saveUserData(userData));
+    userData.reservations.push(newReservation);
 
     localStorage.setItem("userData", JSON.stringify(userData));
+    dispatch(saveUserData(userData));
     navigate("/reservationDetails");
   };
 

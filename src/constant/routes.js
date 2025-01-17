@@ -6,5 +6,5 @@ export const GALLERY_ROUTE = "gallery";
 export const SUCCESS_ROUTE = "success";
 export const FAILED_ROUTE = "failed";
 export const RESERVATION_ROUTE = "reservationDetails";
-
+export const LIST_ROUTE = "reservationList";
 export const MORE_INFO_ROUTE = "moreInfo";

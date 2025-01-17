@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import {
   GALLERY_ROUTE,
   HOME_ROUTE,
+  LIST_ROUTE,
   LOGIN_ROUTE,
   RESERVE_ROUTE,
   ROOMS_ROUTE,
@@ -19,6 +20,7 @@ const Header = () => {
     { id: 3, name: "Booking", to: RESERVE_ROUTE },
     { id: 4, name: "Rooms", to: ROOMS_ROUTE },
     { id: 5, name: "Gallery", to: GALLERY_ROUTE },
+    { id: 6, name: "Reservations", to: LIST_ROUTE },
   ];
 
   const [drawerOpen, setDrawerOpen] = React.useState(false);

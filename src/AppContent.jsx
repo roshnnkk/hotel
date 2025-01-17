@@ -28,8 +28,10 @@ import {
   SUCCESS_ROUTE,
   RESERVATION_ROUTE,
   MORE_INFO_ROUTE,
+  LIST_ROUTE,
 } from "./constant/routes";
 import MoreInfo from "./pages/moreInfo";
+import ReservationList from "./pages/reservationList";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -57,6 +59,7 @@ function App() {
           <Route path={FAILED_ROUTE} element={<PaymentFailed />} />
           <Route path={RESERVATION_ROUTE} element={<ReservationDetails />} />
           <Route path={MORE_INFO_ROUTE} element={<MoreInfo />} />
+          <Route path={LIST_ROUTE} element={<ReservationList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
