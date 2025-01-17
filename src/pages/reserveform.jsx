@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import reserveBackground from "../assets/images/2.jpg";
 import Buttons from "../components/buttons";
 import "../styles/scroll-bar.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import Input from "../components/input";
 import { useForm } from "react-hook-form";

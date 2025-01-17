@@ -16,39 +16,30 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      console.log("Attempting to fetch user data...");
       const response = await axios.get(loginInfo);
-      console.log("Response received:", response);
 
       if (response.data) {
-        console.log("Data property exists:", response.data);
         if (response.data.length > 0) {
           const userData = response.data[0];
-          console.log("User data found:", userData);
 
           if (
             username === userData.username &&
             password === userData.password
           ) {
-            console.log("Username and password match");
             dispatch(setLoggedIn(true));
             localStorage.setItem("isLoggedIn", JSON.stringify(true));
             toast.success("Successfully logged in!");
             navigate("/reserveForm");
           } else {
-            console.log("Invalid username or password");
             toast.error("Invalid username or password");
           }
         } else {
-          console.log("No user data found in the response");
           toast.error("No user data found in the response");
         }
       } else {
-        console.log("Data property is undefined in the response");
         toast.error("Data property is undefined in the response");
       }
     } catch (error) {
-      console.log("Error fetching user data:", error);
       toast.error("Error logging in");
     }
   };

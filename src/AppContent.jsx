@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,8 +12,7 @@ import Login from "./pages/login";
 import Reserve from "./pages/reserveform";
 import RoomSlider from "./pages/rooms";
 import Gallery from "./pages/gallery";
-import PaymentSuccess from "./pages/paymentSuccess";
-import PaymentFailed from "./pages/paymentFailed";
+
 import ReservationDetails from "./pages/ReservationDetails";
 import Footer from "./components/footer";
 import NotFound from "./pages/notFound";
@@ -24,8 +23,7 @@ import {
   RESERVE_ROUTE,
   ROOMS_ROUTE,
   GALLERY_ROUTE,
-  FAILED_ROUTE,
-  SUCCESS_ROUTE,
+
   RESERVATION_ROUTE,
   MORE_INFO_ROUTE,
   LIST_ROUTE,
@@ -34,11 +32,18 @@ import {
 import MoreInfo from "./pages/moreInfo";
 import ReservationList from "./pages/reservationList";
 import EditReservation from "./pages/editReservation";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const location = useLocation();
   const isUserLoggedIn = location.pathname.includes(LOGIN_ROUTE);
+
+  useEffect(() => {
+    const isAuthenticated = JSON.parse(localStorage.getItem("isLoggedIn"));
+    setLoggedIn(!!isAuthenticated);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Toaster />
@@ -57,11 +62,12 @@ function App() {
           <Route path={ROOMS_ROUTE} element={<RoomSlider />} />
           <Route path={`${ROOMS_ROUTE}/:roomId`} element={<MoreInfo />} />
           <Route path={GALLERY_ROUTE} element={<Gallery />} />
-          <Route path={SUCCESS_ROUTE} element={<PaymentSuccess />} />
-          <Route path={FAILED_ROUTE} element={<PaymentFailed />} />
+
           <Route path={RESERVATION_ROUTE} element={<ReservationDetails />} />
+          <Route element={<PrivateRoute loggedIn={loggedIn} />}>
+            <Route path={LIST_ROUTE} element={<ReservationList />} />
+          </Route>
           <Route path={MORE_INFO_ROUTE} element={<MoreInfo />} />
-          <Route path={LIST_ROUTE} element={<ReservationList />} />
           <Route path={EDIT_ROUTE} element={<EditReservation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

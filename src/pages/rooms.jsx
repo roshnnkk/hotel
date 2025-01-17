@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import data from "../data/rooms.json";
 import Buttons from "../components/buttons";
-import { MORE_INFO_ROUTE } from "../constant/routes";
 import { useNavigate } from "react-router";
 
 const RoomSlider = () => {

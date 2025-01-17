@@ -3,8 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { LOGIN_ROUTE } from "../constant/routes";
 
 const PrivateRoute = ({ loggedIn }) => {
-  console.log("Logged in status:", loggedIn);
-  return loggedIn ? <Outlet /> : <Navigate to={LOGIN_ROUTE} />;
+  return loggedIn ? <Outlet /> : <Navigate to={LOGIN_ROUTE} replace />;
 };
 
 export default PrivateRoute;

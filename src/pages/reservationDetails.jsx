@@ -10,13 +10,14 @@ const ReservationDetails = () => {
   useEffect(() => {
     setTimeout(() => {
       const data = JSON.parse(localStorage.getItem("userData"));
-      console.log("Retrieved userData from local storage:", data);
 
-      // Retrieve the last reservation made by the user
       if (data && data.reservations && data.reservations.length > 0) {
-        const latestReservation = data.reservations[data.reservations.length - 1];
+        const latestReservation =
+          data.reservations[data.reservations.length - 1];
         latestReservation.checkInDate = new Date(latestReservation.checkInDate);
-        latestReservation.checkOutDate = new Date(latestReservation.checkOutDate);
+        latestReservation.checkOutDate = new Date(
+          latestReservation.checkOutDate
+        );
         setUserData(latestReservation);
       }
 
