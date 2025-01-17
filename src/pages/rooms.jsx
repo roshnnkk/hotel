@@ -7,11 +7,13 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import data from "../data/rooms.json";
 import Buttons from "../components/buttons";
+import { MORE_INFO_ROUTE } from "../constant/routes";
+import { useNavigate } from "react-router";
 
 const RoomSlider = () => {
   const [imagePaths, setImagePaths] = useState({});
   const [currentBackground, setCurrentBackground] = useState("");
-
+  const navigate = useNavigate();
   useEffect(() => {
     const loadImages = async () => {
       const paths = {};
@@ -30,6 +32,13 @@ const RoomSlider = () => {
     const currentSlideIndex = swiper.activeIndex;
     const currentSlide = data.rooms[currentSlideIndex];
     setCurrentBackground(imagePaths[currentSlide.img]);
+  };
+
+  const GoForMore = (roomId) => {
+    const room = data.rooms.find((room) => room.id === roomId);
+    navigate(`/rooms/${roomId}`, {
+      state: { room, imagePath: imagePaths[room.img] },
+    });
   };
 
   return (
@@ -65,7 +74,12 @@ const RoomSlider = () => {
                       {room.name}
                     </h4>
                     <p>{room.caption}</p>
-                    <Buttons width={"150px"} text={"More details"} />
+
+                    <Buttons
+                      width={"150px"}
+                      text={"More details"}
+                      onClick={() => GoForMore(room.id)}
+                    />
                   </div>
                   <div style={{ flex: 1 }}>
                     <img

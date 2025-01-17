@@ -7,5 +7,4 @@ export const SUCCESS_ROUTE = "success";
 export const FAILED_ROUTE = "failed";
 export const RESERVATION_ROUTE = "reservationDetails";
 
-
-
+export const MORE_INFO_ROUTE = "moreInfo";

@@ -27,7 +27,9 @@ import {
   FAILED_ROUTE,
   SUCCESS_ROUTE,
   RESERVATION_ROUTE,
+  MORE_INFO_ROUTE,
 } from "./constant/routes";
+import MoreInfo from "./pages/moreInfo";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -36,8 +38,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Toaster />
-      {!isUserLoggedIn  && 
-   <Header />}
+      {!isUserLoggedIn && <Header />}
       <main className="flex-grow">
         <Routes>
           <Route path={HOME_ROUTE} element={<Home loggedIn={loggedIn} />} />
@@ -50,14 +51,16 @@ function App() {
             element={<Reserve loggedIn={loggedIn} />}
           />
           <Route path={ROOMS_ROUTE} element={<RoomSlider />} />
+          <Route path={`${ROOMS_ROUTE}/:roomId`} element={<MoreInfo />} />
           <Route path={GALLERY_ROUTE} element={<Gallery />} />
           <Route path={SUCCESS_ROUTE} element={<PaymentSuccess />} />
           <Route path={FAILED_ROUTE} element={<PaymentFailed />} />
           <Route path={RESERVATION_ROUTE} element={<ReservationDetails />} />
+          <Route path={MORE_INFO_ROUTE} element={<MoreInfo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      {!isUserLoggedIn  &&<Footer />}
+      {!isUserLoggedIn && <Footer />}
     </div>
   );
 }

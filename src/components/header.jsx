@@ -10,7 +10,7 @@ import {
 } from "../constant/routes";
 import { AppBar, Box, Toolbar, IconButton } from "@mui/material";
 import Buttons from "./buttons";
-import SwipeableTemporaryDrawer from "./drawer"; // Import the Drawer component
+import SwipeableTemporaryDrawer from "./drawer";
 
 const Header = () => {
   const headerItems = [

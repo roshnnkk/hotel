@@ -5,8 +5,7 @@ import reservationBackground from "../assets/images/reservationBackground.jpg";
 const ReservationDetails = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
+const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       const data = JSON.parse(localStorage.getItem("userData"));
@@ -31,14 +30,14 @@ const ReservationDetails = () => {
         className="flex justify-center items-center min-h-screen bg-fixed bg-cover bg-center h-screen"
         style={{ backgroundImage: `url(${reservationBackground})` }}
       >
-        <div className="spinner border-t-4 border-b-4 border-amber-500 w-16 h-16 rounded-full animate-spin"></div>
+       
+        <div className="spinner border-t-4 border-b-4 border-amber-500 w-16 h-16 rounded-full animate-spin"></div>{" "}
       </div>
     );
   }
-
   return (
     <div
-      className="flex flex-col min-h-screen bg-fixed bg-cover bg-center h-screen"
+      className="flex flex-col min-h-screen bg-fixed bg-cover bg-center  h-screen"
       style={{ backgroundImage: `url(${reservationBackground})` }}
     >
       <section className="mx-auto my-auto p-10 rounded font-custom bg-zinc-400/[0.7]">

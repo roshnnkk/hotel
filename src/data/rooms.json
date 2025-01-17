@@ -5,21 +5,24 @@
       "title": "Best View",
       "name": "Family Suite",
       "caption": "Room size : 30 ft, 1 king bed and 3 single bed",
-      "img": "familyRoom.jpg"
+      "img": "familyRoom.jpg",
+      "more": "Welcome to our luxurious hotel, where sophistication, impeccable service, and unparalleled comfort await you. From the moment you step into our grand lobby, you'll be immersed in an atmosphere of opulence and refined elegance. As you enter our elegant establishment, you will be greeted by a captivating ambiance that exudes sophistication and tranquility."
     },
     {
       "id": 2,
       "title": "Special Price",
       "name": "Presidential Room",
       "caption": "Room size : 40 ft, 1 king bed and 1 single bed",
-      "img": "presidentialRoom.jpg"
+      "img": "presidentialRoom.jpg",
+      "more": "Welcome to our luxurious hotel, where sophistication, impeccable service, and unparalleled comfort await you. From the moment you step into our grand lobby, you'll be immersed in an atmosphere of opulence and refined elegance. As you enter our elegant establishment, you will be greeted by a captivating ambiance that exudes sophistication and tranquility."
     },
     {
       "id": 3,
       "title": "Super Luxury",
       "name": "Premier Room",
       "caption": "Room size : 50 ft, 2 king bed and 2 single bed",
-      "img": "premierRoom.jpg"
+      "img": "premierRoom.jpg",
+      "more": "Welcome to our luxurious hotel, where sophistication, impeccable service, and unparalleled comfort await you. From the moment you step into our grand lobby, you'll be immersed in an atmosphere of opulence and refined elegance. As you enter our elegant establishment, you will be greeted by a captivating ambiance that exudes sophistication and tranquility."
     }
   ]
 }
