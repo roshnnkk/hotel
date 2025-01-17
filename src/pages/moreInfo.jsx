@@ -15,7 +15,7 @@ const MoreInfo = () => {
       className="bg-cover bg-center w-screen min-h-screen bg-scroll flex items-center justify-center -z-10"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto text-white px-4">
         <div className="flex flex-wrap  items-center">
           <div className="w-full md:w-1/2 flex justify-center lg:w-1/3">
             <img

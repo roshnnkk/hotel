@@ -8,3 +8,4 @@ export const FAILED_ROUTE = "failed";
 export const RESERVATION_ROUTE = "reservationDetails";
 export const LIST_ROUTE = "reservationList";
 export const MORE_INFO_ROUTE = "moreInfo";
+export const EDIT_ROUTE = "/editReservation/:index";

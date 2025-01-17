@@ -5,12 +5,21 @@ import reservationBackground from "../assets/images/reservationBackground.jpg";
 const ReservationDetails = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
-const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       const data = JSON.parse(localStorage.getItem("userData"));
       console.log("Retrieved userData from local storage:", data);
-      setUserData(data);
+
+      // Retrieve the last reservation made by the user
+      if (data && data.reservations && data.reservations.length > 0) {
+        const latestReservation = data.reservations[data.reservations.length - 1];
+        latestReservation.checkInDate = new Date(latestReservation.checkInDate);
+        latestReservation.checkOutDate = new Date(latestReservation.checkOutDate);
+        setUserData(latestReservation);
+      }
+
       setLoading(false);
     }, 2000);
   }, []);
@@ -30,14 +39,14 @@ const [loading, setLoading] = useState(true);
         className="flex justify-center items-center min-h-screen bg-fixed bg-cover bg-center h-screen"
         style={{ backgroundImage: `url(${reservationBackground})` }}
       >
-       
-        <div className="spinner border-t-4 border-b-4 border-amber-500 w-16 h-16 rounded-full animate-spin"></div>{" "}
+        <div className="spinner border-t-4 border-b-4 border-amber-500 w-16 h-16 rounded-full animate-spin"></div>
       </div>
     );
   }
+
   return (
     <div
-      className="flex flex-col min-h-screen bg-fixed bg-cover bg-center  h-screen"
+      className="flex flex-col min-h-screen bg-fixed bg-cover bg-center h-screen"
       style={{ backgroundImage: `url(${reservationBackground})` }}
     >
       <section className="mx-auto my-auto p-10 rounded font-custom bg-zinc-400/[0.7]">
@@ -46,11 +55,11 @@ const [loading, setLoading] = useState(true);
           <div className="mt-4">
             <p>
               <strong>Check-In Date:</strong>{" "}
-              {new Date(userData.checkInDate).toLocaleDateString()}
+              {userData.checkInDate.toLocaleDateString()}
             </p>
             <p>
               <strong>Check-Out Date:</strong>{" "}
-              {new Date(userData.checkOutDate).toLocaleDateString()}
+              {userData.checkOutDate.toLocaleDateString()}
             </p>
             <p>
               <strong>Adults:</strong> {userData.adults}
