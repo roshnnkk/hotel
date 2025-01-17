@@ -80,10 +80,10 @@ const ReservationDetails = () => {
             <p>
               <strong>Phone:</strong> {userData.phone}
             </p>
-            <div className="mt-4">
+            <div className="flex gap-2 mt-4">
               <button
                 onClick={handleEdit}
-                className="bg-amber-500 text-white px-4 py-2 rounded mr-2"
+                className="bg-amber-500 text-white px-4 py-2 rounded"
               >
                 Edit
               </button>
@@ -92,6 +92,12 @@ const ReservationDetails = () => {
                 className="bg-red-500 text-white px-4 py-2 rounded"
               >
                 Remove
+              </button>
+              <button
+                onClick={handleEdit}
+                className="bg-green-500 text-white px-4 py-2 rounded"
+              >
+                Ok
               </button>
             </div>
           </div>
